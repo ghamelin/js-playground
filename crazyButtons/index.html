@@ -11,8 +11,8 @@
     .btn-crazy { 
       position: absolute;
       top: 30px;
-      left: 35%;
-      width: 30%;
+      left: 45%;
+      width: 115px;
       text-align: center;
       transition: 0.1s ease all;
       }
@@ -37,19 +37,20 @@
         // get rand num for top 
         const randLeft      = Math.random() * (window.innerWidth - this.clientWidth);
         const randTop       = Math.random() * (window.innerHeight - this.clientHeight);
-
         this.style.top  = randTop + 'px';
         this.style.left = randLeft + 'px';
-
         console.log(randLeft);
         console.log(randTop);
-
       }
-
+      function announce(){
+        const message = "Congratulations! you just waisted your life away trying to click a button.";
+        window.alert(message);
+      }
     // add event listeners
 
       crazyBtn.forEach(function(button){
         button.addEventListener('mouseenter', scatter)
+        button.addEventListener('click', announce)
       });
       
       // alt arrow function
