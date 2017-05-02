@@ -11,10 +11,10 @@
     .btn-crazy { 
       position: absolute;
       top: 30px;
-      left: 30%;
+      left: 35%;
       width: 30%;
       text-align: center;
-      transition: 0.5s ease all;
+      transition: 0.25s ease all;
       }
   </style>
   <title>Buttons</title>
@@ -22,20 +22,24 @@
 <body>
   <div>
     <button type="button" class="btn-crazy btn btn-lg btn-danger">Click Me!</button>
+    <button type="button" class="btn-crazy btn btn-lg btn-primary">Click Me!</button>
+    <button type="button" class="btn-crazy btn btn-lg btn-success">Click Me!</button>
+    <button type="button" class="btn-crazy btn btn-lg btn-warning">Click Me!</button>
+
   </div>
   <script>
     // grab everything from dom
-      const crazyBtn = document.querySelector('.btn-crazy');
+      const crazyBtn = document.querySelectorAll('.btn-crazy');
 
     // create functions
       function scatter(){
         // get randnum for left
         // get rand num for top 
-        const randLeft      = Math.random();
-        const randTop       = Math.random();
+        const randLeft      = Math.random() * (window.innerWidth - this.clientWidth);
+        const randTop       = Math.random() * (window.innerHeight - this.clientHeight);
 
-        crazyBtn.style.top  = randTop + '%';
-        crazyBtn.style.left = randLeft + 'px';
+        this.style.top  = randTop + 'px';
+        this.style.left = randLeft + 'px';
 
         console.log(randLeft);
         console.log(randTop);
@@ -44,7 +48,15 @@
 
     // add event listeners
 
-      crazyBtn.addEventListener('mouseenter', scatter);
+      crazyBtn.forEach(function(button){
+        button.addEventListener('mouseenter', scatter)
+      });
+      
+      // alt arrow function
+      /*
+      crazyBtn.forEach(button => {button.addEventListener('mouseenter', scatter)
+      });
+      */
 
   </script>
 </body>
