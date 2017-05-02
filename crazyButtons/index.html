@@ -8,13 +8,44 @@
   <style>
     body, .jumbotron {padding: 30px; }
     .text-giant {font-size: 40px; }
+    .btn-crazy { 
+      position: absolute;
+      top: 30px;
+      left: 30%;
+      width: 30%;
+      text-align: center;
+      transition: 0.5s ease all;
+      }
   </style>
   <title>Buttons</title>
 </head>
 <body>
-  <div class="text-center">
-    <button type="button" class="btn-crazy btn btn-lg btn-danger"></button>
+  <div>
+    <button type="button" class="btn-crazy btn btn-lg btn-danger">Click Me!</button>
   </div>
-  
+  <script>
+    // grab everything from dom
+      const crazyBtn = document.querySelector('.btn-crazy');
+
+    // create functions
+      function scatter(){
+        // get randnum for left
+        // get rand num for top 
+        const randLeft      = Math.random();
+        const randTop       = Math.random();
+
+        crazyBtn.style.top  = randTop + '%';
+        crazyBtn.style.left = randLeft + 'px';
+
+        console.log(randLeft);
+        console.log(randTop);
+
+      }
+
+    // add event listeners
+
+      crazyBtn.addEventListener('mouseenter', scatter);
+
+  </script>
 </body>
 </html>
