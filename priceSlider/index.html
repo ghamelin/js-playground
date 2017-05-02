@@ -5,10 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <title>Document</title>
+  <style>
+    body, .jumbotron {padding: 30px; }
+    .text-giant {font-size: 40px; }
+  </style>
+  <title>price slider</title>
+
 </head>
 <body>
-  
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <div class="jumbotron">
+    <h2>How much does 'stuff' cost</h2>
+    <form>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" class="form-control" name="price" value="10">
+      </div>
+      <div class="form-group">
+        <lablel for="quantity">
+          Quantity
+          <span class="label label-primary quantity-label">1</span> 
+
+        </lablel>
+        
+        <input type="range" class="form-control" name="quantity" value="1" min="1" max="10" step="1">
+        
+      </div>
+    </form>
+    <div class="text-right text-giant total"></div>
+  </div>
+
+  <!--js stuffs go below-->
+<script>
+  // get everything we need from dom
+const priceInput    = document.querySelector('[name=price]');
+const quantityInput = document.querySelector('[name=quantity]');
+const total         = document.querySelector('.total');
+const quantityLabel = document.querySelector('.quantity-label');
+// create functions
+function calculateCost(){
+  const price     = priceInput.value;
+  const quantity  = quantityInput.value;
+  const totalCost = price * quantity;
+  console.log(totalCost);
+  total.innerHTML = '$'+ totalCost.toFixed(2);
+}
+function updateQuantityLabel(){
+  const quantity          = quantityInput.value;
+  quantityLabel.innerHTML = quantity;
+}
+// calculate on load
+calculateCost();
+//add event listeners
+priceInput.addEventListener('input', calculateCost);
+quantityInput.addEventListener('input', calculateCost);
+quantityInput.addEventListener('input', updateQuantityLabel);
+
+</script>
 </body>
 </html>
