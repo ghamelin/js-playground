@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <style>
-    body, .jumbotron {padding: 30px; }
-    .text-giant {font-size: 40px; }
-    .btn-crazy { 
+    body,
+    .jumbotron {
+      padding: 30px;
+    }
+    
+    .text-giant {
+      font-size: 40px;
+    }
+    
+    .btn-crazy {
       position: absolute;
       top: 45vh;
       left: 45%;
       width: 10%;
       text-align: center;
       transition: 0.1s ease all;
-      }
+    }
   </style>
   <title>Buttons</title>
 </head>
+
 <body>
   <div>
     <button type="button" class="btn-crazy btn btn-lg btn-danger">Click Me!</button>
@@ -29,36 +38,36 @@
   </div>
   <script>
     // grab everything from dom
-      const crazyBtn = document.querySelectorAll('.btn-crazy');
+    const crazyBtn = document.querySelectorAll('.btn-crazy');
 
     // create functions
-      function scatter(){
-        // get randnum for left
-        // get rand num for top 
-        const randLeft      = Math.random() * (window.innerWidth - this.clientWidth);
-        const randTop       = Math.random() * (window.innerHeight - this.clientHeight);
-        this.style.top  = randTop + 'px';
-        this.style.left = randLeft + 'px';
-        console.log(randLeft);
-        console.log(randTop);
-      }
-      function announce(){
-        const message = "Congratulations! you just waisted your life away trying to click a button.";
-        window.alert(message);
-      }
+    function scatter() {
+      // get randnum for left
+      // get rand num for top 
+      const randLeft = Math.random() * (window.innerWidth - this.clientWidth);
+      const randTop = Math.random() * (window.innerHeight - this.clientHeight);
+      this.style.top = randTop + 'px';
+      this.style.left = randLeft + 'px';
+      console.log(randLeft);
+      console.log(randTop);
+    }
+    function announce() {
+      const message = "Congratulations! you just waisted your life away trying to click a button.";
+      window.alert(message);
+    }
     // add event listeners
 
-      crazyBtn.forEach(function(button){
-        button.addEventListener('mouseenter', scatter)
-        button.addEventListener('click', announce)
-      });
-      
+    crazyBtn.forEach(function (button) {
+      button.addEventListener('mouseenter', scatter)
+      button.addEventListener('click', announce)
+    });
+
       // alt arrow function
       /*
       crazyBtn.forEach(button => {button.addEventListener('mouseenter', scatter)
       });
       */
-
   </script>
 </body>
+
 </html>
