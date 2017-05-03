@@ -67,7 +67,7 @@ body.show-floater .overlay{
 }
 
 .bookmark {
-  display: block;
+  display: flex;
   background: #FFF;
   color: #999;
   padding: 20px;
@@ -91,6 +91,26 @@ body.show-floater .overlay{
 }
 .bookmark .img { 
   background-color: #DDD;
-  border-radius: 3px;
+  border-radius: 4px;
   background-image: url('https://avatars2.githubusercontent.com/u/22037045?v=3&s=460');
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+}
+.bookmark .title {
+  display: flex;
+  align-items: center;
+}
+.bookmark .glyphicon-remove {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #EEE;
+  font-size: 12px;
+  transition: 0.3s ease color;
+  cursor: pointer;
+}
+.bookmark:hover .glyphicon-remove {
+  color: #AAA;
 }
