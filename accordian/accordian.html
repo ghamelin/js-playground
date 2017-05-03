@@ -96,14 +96,21 @@
 <script>
   // snag dom elements
   const accordian = document.querySelector('.accordian');
-  const item = accordian.querySelector('li');
-  const question = accordian.querySelector('.question');
-  
+  const items      = accordian.querySelectorAll('li');
+  const questions  = accordian.querySelectorAll('.question');
+
 
   // build functions
+  function toggleDisplay(){
+    const thisItem = this.parentNode;
+    console.log(thisItem);
+    thisItem.classList.toggle('open');
+  }
 
   // add event listeners
-
+  questions.forEach(function(question) {
+    question.addEventListener('click', toggleDisplay);
+  }, this);
 
 </script>
 </body>
