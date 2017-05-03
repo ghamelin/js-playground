@@ -18,3 +18,18 @@ overlay.addEventListener('click', function(){
       bodyClass.remove('show-floater');
   }
 })
+
+// =============================================
+
+const bookmarkList = document.querySelector('.bookmarks-list');
+const bookmarkForm = document.querySelector('.bookmark-form');
+const bookmarkInput = bookmarkForm.querySelector('input[type=text]');
+
+
+
+bookmarkForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  console.log('submitted');
+});
+
+{/*<a href="" class="bookmark">place holder</a>*/}
