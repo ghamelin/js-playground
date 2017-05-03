@@ -1,126 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <style>
-    body, .jumbotron {padding: 30px; }
-    body { 
-      background: #EFEFEF;
-    }
-    .accordian {
-      background: #FFFFFF;
-      border-radius: 5px;
-      padding: 30px;
-    }
-    ul {
-      margin-bottom: 0;
-    }
-    .question { 
-      border-top: 1px solid #EEE;
-      padding: 20px;
-      cursor: pointer;
-      position: relative;
-    }
-    .question h2 {
-      font-size: 20px;
-      color: #c00c00;
-      margin: 0;
-    }
-    .question .glyphicon {
-      position: absolute;
-      right: 20px;
-      top: 0%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      color: #c00c00;
-      transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-    }
-    .answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-    }
-    .answer p {
-      padding: 20px;
-    }
-    .accordian li.open .question .glyphicon {
-      transform: rotate(180deg)
-    }
-    .accordian li.open .answer{
-      max-height: 175px;
-    }
-    .text-giant {font-size: 40px; }
-  </style>
+  <link rel="stylesheet" href="./assets/styles.css">
   <title>Accordian Demo</title>
 
 </head>
+
 <body>
-<div class="container">
-  <div class="accordian">
-    <ul class="list-unstyled">
-      <li class="open">
-        <div class="question">
-          <h2>What is your name?</h2>
-          <span class="glyphicon glyphicon-menu-down"></span>
-        </div>
-        <div class="answer">
-          <p>Sir Lancelot of Camelot! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci rerum architecto excepturi porro consequatur eos sequi veritatis, dolor quaerat aut saepe, perspiciatis quas. Voluptatem in sed voluptas accusantium cumque asperiores.</p>
-        </div>
-      </li>
-      <li>
-        <div class="question">
-          <h2>What is your quest?</h2>
-          <span class="glyphicon glyphicon-menu-down"></span>
-        </div>
-        <div class="answer">
-          <p>To seek the Holy Grail! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet sint animi ratione? Fuga nostrum delectus, quasi voluptates facilis fugiat. A in, totam voluptatibus natus ut magnam accusamus, qui quos at!</p>
-        </div>
-      </li>
-      <li>
-        <div class="question">
-          <h2>What is your favorite color?</h2>
-          <span class="glyphicon glyphicon-menu-down"></span>
-        </div>
-        <div class="answer">
-          <p>Blue! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus impedit rem aut officia nesciunt quo accusamus, distinctio reprehenderit itaque deleniti ullam, eum veritatis temporibus vel voluptate saepe quos in modi.</p>
-        </div>
-      </li>
-    </ul>
+  <div class="container">
+    <div class="accordian">
+      <ul class="list-unstyled">
+        <li class="open">
+          <div class="question">
+            <h2>What is your name?</h2>
+            <span class="glyphicon glyphicon-menu-down"></span>
+          </div>
+          <div class="answer">
+            <p>Sir Lancelot of Camelot! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci rerum architecto
+              excepturi porro consequatur eos sequi veritatis, dolor quaerat aut saepe, perspiciatis quas. Voluptatem in
+              sed voluptas accusantium cumque asperiores.</p>
+          </div>
+        </li>
+        <li>
+          <div class="question">
+            <h2>What is your quest?</h2>
+            <span class="glyphicon glyphicon-menu-down"></span>
+          </div>
+          <div class="answer">
+            <p>To seek the Holy Grail! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet sint animi ratione?
+              Fuga nostrum delectus, quasi voluptates facilis fugiat. A in, totam voluptatibus natus ut magnam accusamus,
+              qui quos at!</p>
+          </div>
+        </li>
+        <li>
+          <div class="question">
+            <h2>What is your favorite color?</h2>
+            <span class="glyphicon glyphicon-menu-down"></span>
+          </div>
+          <div class="answer">
+            <p>Blue! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus impedit rem aut officia nesciunt
+              quo accusamus, distinctio reprehenderit itaque deleniti ullam, eum veritatis temporibus vel voluptate saepe
+              quos in modi.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
 
-<script>
-  // snag dom elements
-  const accordian = document.querySelector('.accordian');
-  const items      = accordian.querySelectorAll('li');
-  const questions  = accordian.querySelectorAll('.question');
-
-
-  // build functions
-  function toggleDisplay(){
-    const thisItem = this.parentNode;
-    
-    items.forEach(function(item) {
-      if (thisItem == item){
-      thisItem.classList.toggle('open');
-      }
-      else {
-        item.classList.remove('open');
-      }
-    });
-    console.log(thisItem);
-    
-  }
-
-  // add event listeners
-  questions.forEach(function(question) {
-    question.addEventListener('click', toggleDisplay);
-  });
-
-</script>
+  <script src="./assets/accordian.js"></script>
 </body>
+
 </html>
