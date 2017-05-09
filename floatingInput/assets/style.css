@@ -74,6 +74,7 @@ body.show-floater .overlay{
   transition: 0.3s ease all;
   border-bottom: 1px solid #DDD;
   font-size: 16px;
+  position: relative;
 }
 .bookmark:hover { 
   text-decoration: none; 
