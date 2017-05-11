@@ -95,7 +95,8 @@ body.show-floater .overlay{
   border-radius: 4px;
   background-image: url('https://avatars2.githubusercontent.com/u/22037045?v=3&s=460');
   background-size: cover;
-  width: 80px;
+  background-position: top center;
+  width: 160px;
   height: 80px;
   margin-right: 20px;
 }
@@ -103,6 +104,7 @@ body.show-floater .overlay{
   display: flex;
   align-items: center;
 }
+
 .bookmark .glyphicon-remove {
   position: absolute;
   top: 10px;
